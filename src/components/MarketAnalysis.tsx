@@ -1,8 +1,10 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, Activity, BarChart3, Globe } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import PortfolioSync from './PortfolioSync';
+import TradingSignals from './TradingSignals';
+import BrokerConnect from './BrokerConnect';
 
 const MarketAnalysis = () => {
   return (
@@ -20,6 +22,9 @@ const MarketAnalysis = () => {
           <TabsTrigger value="technical">Technical Analysis</TabsTrigger>
           <TabsTrigger value="sentiment">Sentiment Analysis</TabsTrigger>
           <TabsTrigger value="economic">Economic Indicators</TabsTrigger>
+          <TabsTrigger value="signals">AI Signals</TabsTrigger>
+          <TabsTrigger value="portfolio">Portfolio Sync</TabsTrigger>
+          <TabsTrigger value="brokers">Broker Connect</TabsTrigger>
         </TabsList>
 
         <TabsContent value="overview" className="space-y-6">
@@ -229,6 +234,18 @@ const MarketAnalysis = () => {
               </Card>
             ))}
           </div>
+        </TabsContent>
+
+        <TabsContent value="signals" className="space-y-6">
+          <TradingSignals />
+        </TabsContent>
+
+        <TabsContent value="portfolio" className="space-y-6">
+          <PortfolioSync />
+        </TabsContent>
+
+        <TabsContent value="brokers" className="space-y-6">
+          <BrokerConnect />
         </TabsContent>
       </Tabs>
     </div>
