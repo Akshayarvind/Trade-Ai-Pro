@@ -10,7 +10,7 @@ const Header = () => {
         <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
           <TrendingUp className="w-5 h-5 text-white" />
         </div>
-        <h1 className="text-xl font-bold text-white">TradeAI Pro</h1>
+        <h1 className="text-xl font-bold text-white">TradeAI Pro India</h1>
         <div className="px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full border border-emerald-500/30">
           DEMO MODE
         </div>
@@ -19,8 +19,8 @@ const Header = () => {
       <div className="flex items-center space-x-4">
         <div className="text-right">
           <div className="text-sm text-slate-300">Portfolio Value</div>
-          <div className="text-lg font-bold text-emerald-400">$127,432.50</div>
-          <div className="text-xs text-emerald-400">+2.34% (+$2,945.21)</div>
+          <div className="text-lg font-bold text-emerald-400">₹95,67,432.50</div>
+          <div className="text-xs text-emerald-400">+2.34% (+₹2,19,945.21)</div>
         </div>
         
         <div className="flex items-center space-x-2">

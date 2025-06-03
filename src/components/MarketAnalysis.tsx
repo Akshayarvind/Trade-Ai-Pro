@@ -8,7 +8,7 @@ const MarketAnalysis = () => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-white">Market Analysis</h1>
+        <h1 className="text-3xl font-bold text-white">Market Analysis (India)</h1>
         <div className="text-sm text-slate-300">
           Last updated: 2 minutes ago
         </div>
@@ -28,12 +28,12 @@ const MarketAnalysis = () => {
               <CardHeader>
                 <CardTitle className="text-white flex items-center space-x-2">
                   <TrendingUp className="w-5 h-5 text-emerald-400" />
-                  <span>S&P 500</span>
+                  <span>NIFTY 50</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-white mb-2">4,567.89</div>
-                <div className="text-emerald-400 text-sm">+1.23% (+56.78)</div>
+                <div className="text-2xl font-bold text-white mb-2">21,567.89</div>
+                <div className="text-emerald-400 text-sm">+1.23% (+267.78)</div>
                 <div className="text-xs text-slate-400 mt-2">Strong bullish momentum</div>
               </CardContent>
             </Card>
@@ -42,13 +42,13 @@ const MarketAnalysis = () => {
               <CardHeader>
                 <CardTitle className="text-white flex items-center space-x-2">
                   <Activity className="w-5 h-5 text-blue-400" />
-                  <span>NASDAQ</span>
+                  <span>SENSEX</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-white mb-2">14,234.56</div>
-                <div className="text-emerald-400 text-sm">+2.05% (+287.34)</div>
-                <div className="text-xs text-slate-400 mt-2">Tech sector leading gains</div>
+                <div className="text-2xl font-bold text-white mb-2">71,234.56</div>
+                <div className="text-emerald-400 text-sm">+2.05% (+1,287.34)</div>
+                <div className="text-xs text-slate-400 mt-2">Banking sector leading gains</div>
               </CardContent>
             </Card>
 
@@ -56,12 +56,12 @@ const MarketAnalysis = () => {
               <CardHeader>
                 <CardTitle className="text-white flex items-center space-x-2">
                   <Globe className="w-5 h-5 text-purple-400" />
-                  <span>VIX</span>
+                  <span>India VIX</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-white mb-2">18.45</div>
-                <div className="text-red-400 text-sm">-2.34% (-0.44)</div>
+                <div className="text-2xl font-bold text-white mb-2">15.45</div>
+                <div className="text-red-400 text-sm">-2.34% (-0.37)</div>
                 <div className="text-xs text-slate-400 mt-2">Low volatility environment</div>
               </CardContent>
             </Card>
@@ -69,17 +69,17 @@ const MarketAnalysis = () => {
 
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
-              <CardTitle className="text-white">Sector Performance</CardTitle>
+              <CardTitle className="text-white">Sector Performance (NSE)</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {[
-                  { sector: 'Technology', performance: '+3.45%', color: 'emerald' },
-                  { sector: 'Healthcare', performance: '+2.12%', color: 'emerald' },
-                  { sector: 'Financial', performance: '+1.87%', color: 'emerald' },
-                  { sector: 'Consumer Disc.', performance: '+0.92%', color: 'emerald' },
-                  { sector: 'Energy', performance: '-1.23%', color: 'red' },
-                  { sector: 'Utilities', performance: '-0.56%', color: 'red' },
+                  { sector: 'Information Technology', performance: '+3.45%', color: 'emerald' },
+                  { sector: 'Banking & Financial', performance: '+2.12%', color: 'emerald' },
+                  { sector: 'Pharmaceutical', performance: '+1.87%', color: 'emerald' },
+                  { sector: 'FMCG', performance: '+0.92%', color: 'emerald' },
+                  { sector: 'Oil & Gas', performance: '-1.23%', color: 'red' },
+                  { sector: 'Real Estate', performance: '-0.56%', color: 'red' },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
                     <span className="text-slate-300">{item.sector}</span>
@@ -94,16 +94,16 @@ const MarketAnalysis = () => {
         <TabsContent value="technical" className="space-y-6">
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
-              <CardTitle className="text-white">Technical Indicators</CardTitle>
+              <CardTitle className="text-white">Technical Indicators (NIFTY 50)</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="font-medium text-white">Moving Averages</h3>
                   {[
-                    { period: 'MA(20)', value: '4,532.45', signal: 'BULLISH', color: 'emerald' },
-                    { period: 'MA(50)', value: '4,489.23', signal: 'BULLISH', color: 'emerald' },
-                    { period: 'MA(200)', value: '4,356.78', signal: 'BULLISH', color: 'emerald' },
+                    { period: 'MA(20)', value: '21,432.45', signal: 'BULLISH', color: 'emerald' },
+                    { period: 'MA(50)', value: '21,289.23', signal: 'BULLISH', color: 'emerald' },
+                    { period: 'MA(200)', value: '20,956.78', signal: 'BULLISH', color: 'emerald' },
                   ].map((ma, index) => (
                     <div key={index} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
                       <div>
@@ -121,7 +121,7 @@ const MarketAnalysis = () => {
                   <h3 className="font-medium text-white">Momentum Indicators</h3>
                   {[
                     { indicator: 'RSI(14)', value: '67.8', signal: 'NEUTRAL', color: 'yellow' },
-                    { indicator: 'MACD', value: '12.34', signal: 'BULLISH', color: 'emerald' },
+                    { indicator: 'MACD', value: '112.34', signal: 'BULLISH', color: 'emerald' },
                     { indicator: 'Stoch %K', value: '78.9', signal: 'OVERBOUGHT', color: 'red' },
                   ].map((indicator, index) => (
                     <div key={index} className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg">
@@ -144,23 +144,23 @@ const MarketAnalysis = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className="bg-slate-800/50 border-slate-700">
               <CardHeader>
-                <CardTitle className="text-white">News Sentiment</CardTitle>
+                <CardTitle className="text-white">News Sentiment (India)</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-slate-300">Overall Market</span>
-                    <span className="text-emerald-400 font-medium">POSITIVE (78%)</span>
+                    <span className="text-emerald-400 font-medium">POSITIVE (76%)</span>
                   </div>
                   <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div className="bg-emerald-400 h-2 rounded-full" style={{ width: '78%' }}></div>
+                    <div className="bg-emerald-400 h-2 rounded-full" style={{ width: '76%' }}></div>
                   </div>
                   
                   <div className="mt-4 space-y-3">
                     {[
-                      { source: 'Financial News', sentiment: 'Positive', score: 82 },
-                      { source: 'Social Media', sentiment: 'Neutral', score: 64 },
-                      { source: 'Analyst Reports', sentiment: 'Positive', score: 89 },
+                      { source: 'Economic Times', sentiment: 'Positive', score: 84 },
+                      { source: 'Business Standard', sentiment: 'Positive', score: 78 },
+                      { source: 'MoneyControl', sentiment: 'Neutral', score: 62 },
                     ].map((item, index) => (
                       <div key={index} className="flex items-center justify-between text-sm">
                         <span className="text-slate-300">{item.source}</span>
@@ -176,19 +176,24 @@ const MarketAnalysis = () => {
 
             <Card className="bg-slate-800/50 border-slate-700">
               <CardHeader>
-                <CardTitle className="text-white">Fear & Greed Index</CardTitle>
+                <CardTitle className="text-white">FII/DII Activity</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-emerald-400 mb-2">72</div>
-                  <div className="text-lg text-emerald-400 mb-4">GREED</div>
-                  <div className="w-full bg-slate-700 rounded-full h-3 mb-4">
-                    <div className="bg-gradient-to-r from-red-500 via-yellow-500 to-emerald-500 h-3 rounded-full relative">
-                      <div className="absolute top-0 bg-white w-1 h-3 rounded-full" style={{ left: '72%' }}></div>
+                <div className="space-y-4">
+                  <div className="p-3 bg-slate-700/30 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-300">FII Net Flow</span>
+                      <span className="text-emerald-400 font-medium">₹2,345 Cr</span>
                     </div>
+                    <div className="text-xs text-slate-400">Strong buying interest from Foreign Institutional Investors</div>
                   </div>
-                  <div className="text-sm text-slate-400">
-                    Market showing strong optimism. Consider taking profits.
+                  
+                  <div className="p-3 bg-slate-700/30 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-300">DII Net Flow</span>
+                      <span className="text-blue-400 font-medium">₹1,876 Cr</span>
+                    </div>
+                    <div className="text-xs text-slate-400">Domestic Institutional Investors showing confidence</div>
                   </div>
                 </div>
               </CardContent>
@@ -199,12 +204,12 @@ const MarketAnalysis = () => {
         <TabsContent value="economic" className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { indicator: 'Fed Funds Rate', value: '5.25%', change: 'No change', impact: 'Neutral' },
-              { indicator: 'Inflation (CPI)', value: '3.2%', change: '-0.1%', impact: 'Positive' },
-              { indicator: 'Unemployment', value: '3.7%', change: '+0.1%', impact: 'Negative' },
-              { indicator: 'GDP Growth', value: '2.4%', change: '+0.2%', impact: 'Positive' },
-              { indicator: '10Y Treasury', value: '4.35%', change: '-0.05%', impact: 'Positive' },
-              { indicator: 'Dollar Index', value: '103.45', change: '+0.23', impact: 'Negative' },
+              { indicator: 'Repo Rate (RBI)', value: '6.50%', change: 'No change', impact: 'Neutral' },
+              { indicator: 'CPI Inflation', value: '5.2%', change: '-0.3%', impact: 'Positive' },
+              { indicator: 'GDP Growth', value: '7.6%', change: '+0.4%', impact: 'Positive' },
+              { indicator: '10Y G-Sec Yield', value: '7.15%', change: '-0.08%', impact: 'Positive' },
+              { indicator: 'USD/INR', value: '83.45', change: '+0.23', impact: 'Negative' },
+              { indicator: 'Gold (₹/10g)', value: '₹62,450', change: '-₹145', impact: 'Positive' },
             ].map((econ, index) => (
               <Card key={index} className="bg-slate-800/50 border-slate-700">
                 <CardContent className="p-4">

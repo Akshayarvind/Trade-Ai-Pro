@@ -9,53 +9,53 @@ import { TrendingUp, TrendingDown, Search, Zap, Shield, Target } from 'lucide-re
 
 const Trading = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedStock, setSelectedStock] = useState('AAPL');
+  const [selectedStock, setSelectedStock] = useState('RELIANCE');
   const [quantity, setQuantity] = useState('');
   const [orderType, setOrderType] = useState('market');
 
   const watchlist = [
-    { symbol: 'AAPL', price: 182.31, change: +4.07, changePercent: +2.28, signal: 'BUY' },
-    { symbol: 'MSFT', price: 425.67, change: +12.78, changePercent: +3.09, signal: 'BUY' },
-    { symbol: 'NVDA', price: 798.45, change: +77.12, changePercent: +10.68, signal: 'STRONG_BUY' },
-    { symbol: 'TSLA', price: 251.33, change: -5.67, changePercent: -2.20, signal: 'HOLD' },
-    { symbol: 'GOOGL', price: 148.22, change: +5.66, changePercent: +3.97, signal: 'BUY' },
-    { symbol: 'AMZN', price: 162.18, change: +6.75, changePercent: +4.34, signal: 'BUY' },
+    { symbol: 'RELIANCE', price: 2823.15, change: +67.20, changePercent: +2.43, signal: 'BUY' },
+    { symbol: 'TCS', price: 4256.80, change: +89.45, changePercent: +2.14, signal: 'BUY' },
+    { symbol: 'INFY', price: 1789.25, change: +45.60, changePercent: +2.62, signal: 'STRONG_BUY' },
+    { symbol: 'HDFCBANK', price: 1634.90, change: -12.30, changePercent: -0.75, signal: 'HOLD' },
+    { symbol: 'ITC', price: 456.75, change: +8.90, changePercent: +1.99, signal: 'BUY' },
+    { symbol: 'ICICIBANK', price: 1205.40, change: +23.80, changePercent: +2.01, signal: 'BUY' },
   ];
 
   const aiSignals = [
     {
-      symbol: 'NVDA',
+      symbol: 'RELIANCE',
       action: 'STRONG BUY',
-      confidence: 94,
-      reason: 'AI momentum + earnings beat',
-      targetPrice: 850,
-      stopLoss: 720,
+      confidence: 92,
+      reason: 'Refinery margins improving + new energy ventures',
+      targetPrice: 3100,
+      stopLoss: 2650,
     },
     {
-      symbol: 'AAPL',
+      symbol: 'TCS',
+      action: 'BUY',
+      confidence: 89,
+      reason: 'Strong Q3 results + digital transformation deals',
+      targetPrice: 4600,
+      stopLoss: 3900,
+    },
+    {
+      symbol: 'INFY',
       action: 'BUY',
       confidence: 87,
-      reason: 'iPhone sales recovery + services growth',
-      targetPrice: 195,
-      stopLoss: 170,
-    },
-    {
-      symbol: 'TSLA',
-      action: 'HOLD',
-      confidence: 72,
-      reason: 'Mixed signals - wait for breakout',
-      targetPrice: 280,
-      stopLoss: 230,
+      reason: 'AI/ML capabilities driving client wins',
+      targetPrice: 1950,
+      stopLoss: 1650,
     },
   ];
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-white">Trading Center</h1>
+        <h1 className="text-3xl font-bold text-white">Trading Center (NSE/BSE)</h1>
         <div className="flex items-center space-x-2 text-sm text-slate-300">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>Paper Trading Mode • $50,000 Available</span>
+          <span>Paper Trading Mode • ₹37,50,000 Available</span>
         </div>
       </div>
 
@@ -74,11 +74,11 @@ const Trading = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm text-slate-300 mb-2 block">Symbol</label>
+                    <label className="text-sm text-slate-300 mb-2 block">Symbol (NSE/BSE)</label>
                     <div className="relative">
                       <Search className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
                       <Input
-                        placeholder="Search stocks..."
+                        placeholder="Search Indian stocks..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="pl-10 bg-slate-700 border-slate-600 text-white"
@@ -120,9 +120,9 @@ const Trading = () => {
 
                 <div className="space-y-4">
                   <div className="p-4 bg-slate-700/30 rounded-lg">
-                    <div className="text-lg font-bold text-white mb-2">AAPL - Apple Inc</div>
-                    <div className="text-2xl font-bold text-emerald-400 mb-1">$182.31</div>
-                    <div className="text-sm text-emerald-400">+$4.07 (+2.28%)</div>
+                    <div className="text-lg font-bold text-white mb-2">RELIANCE - Reliance Industries</div>
+                    <div className="text-2xl font-bold text-emerald-400 mb-1">₹2,823.15</div>
+                    <div className="text-sm text-emerald-400">+₹67.20 (+2.43%)</div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
@@ -137,7 +137,7 @@ const Trading = () => {
                   </div>
 
                   <div className="text-sm text-slate-400">
-                    Estimated Cost: ${(182.31 * (parseInt(quantity) || 0)).toFixed(2)}
+                    Estimated Cost: ₹{(2823.15 * (parseInt(quantity) || 0)).toLocaleString('en-IN', { maximumFractionDigits: 2 })}
                   </div>
                 </div>
               </div>
@@ -148,7 +148,7 @@ const Trading = () => {
             <CardHeader>
               <CardTitle className="text-white flex items-center space-x-2">
                 <Zap className="w-5 h-5 text-yellow-400" />
-                <span>AI Trading Signals</span>
+                <span>AI Trading Signals (Indian Market)</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -175,8 +175,8 @@ const Trading = () => {
                     <div className="text-sm text-slate-300 mb-3">{signal.reason}</div>
                     
                     <div className="flex items-center justify-between text-xs text-slate-400">
-                      <span>Target: ${signal.targetPrice}</span>
-                      <span>Stop Loss: ${signal.stopLoss}</span>
+                      <span>Target: ₹{signal.targetPrice}</span>
+                      <span>Stop Loss: ₹{signal.stopLoss}</span>
                     </div>
                     
                     <div className="flex space-x-2 mt-3">
@@ -193,7 +193,7 @@ const Trading = () => {
         <div className="space-y-6">
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader>
-              <CardTitle className="text-white">Watchlist</CardTitle>
+              <CardTitle className="text-white">Watchlist (NSE)</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
@@ -217,9 +217,9 @@ const Trading = () => {
                       </Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-300">${stock.price.toFixed(2)}</span>
+                      <span className="text-slate-300">₹{stock.price.toFixed(2)}</span>
                       <span className={`text-sm ${stock.change >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
-                        {stock.change >= 0 ? '+' : ''}{stock.change.toFixed(2)} ({stock.changePercent.toFixed(2)}%)
+                        {stock.change >= 0 ? '+' : ''}₹{stock.change.toFixed(2)} ({stock.changePercent.toFixed(2)}%)
                       </span>
                     </div>
                   </div>
@@ -239,7 +239,7 @@ const Trading = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-300">Daily Loss Limit</span>
-                  <span className="text-emerald-400">$2,500 / $5,000</span>
+                  <span className="text-emerald-400">₹1,87,500 / ₹3,75,000</span>
                 </div>
                 <div className="w-full bg-slate-700 rounded-full h-2">
                   <div className="bg-emerald-400 h-2 rounded-full" style={{ width: '50%' }}></div>
@@ -252,7 +252,7 @@ const Trading = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-slate-300">Portfolio Beta</span>
-                  <span className="text-yellow-400">1.24</span>
+                  <span className="text-yellow-400">1.18</span>
                 </div>
 
                 <div className="pt-4 border-t border-slate-700">

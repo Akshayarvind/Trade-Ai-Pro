@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, TrendingDown, DollarSign, Activity, Target, AlertTriangle } from 'lucide-react';
+import { TrendingUp, TrendingDown, IndianRupee, Activity, Target, AlertTriangle } from 'lucide-react';
 import PortfolioChart from './PortfolioChart';
 import RecentTrades from './RecentTrades';
 import TopPerformers from './TopPerformers';
@@ -11,15 +11,15 @@ const Dashboard = () => {
   const stats = [
     {
       title: 'Total Portfolio Value',
-      value: '$127,432.50',
+      value: '₹95,67,432.50',
       change: '+2.34%',
-      changeValue: '+$2,945.21',
-      icon: DollarSign,
+      changeValue: '+₹2,19,945.21',
+      icon: IndianRupee,
       positive: true,
     },
     {
       title: 'Daily P&L',
-      value: '$1,847.32',
+      value: '₹1,38,247.32',
       change: '+1.47%',
       changeValue: 'Today',
       icon: TrendingUp,
@@ -49,7 +49,7 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold text-white">Trading Dashboard</h1>
         <div className="flex items-center space-x-2 text-sm text-slate-300">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>Markets Open • AI Active</span>
+          <span>NSE/BSE Open • AI Active</span>
         </div>
       </div>
 
